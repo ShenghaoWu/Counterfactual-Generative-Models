@@ -1,15 +1,14 @@
-Code for **Counterfactual Generative Models for Time-Varying Treatments**
+Code for Counterfactual Generative Models for Time-Varying Treatments [KDD 24'] (Shenghao Wu, Wenbin Zhou, Minshuo Chen, Shixiang Zhu)
 
+https://arxiv.org/abs/2305.15742
 
-Estimating average causal effects is a common practice to test new treatments. However,
-the average effect “masks” important individual characteristics in the counterfactual distribution, which may lead to safety, fairness and ethical concerns. This issue is exacerbated
-in the temporal setting, where the treatment is sequential and time-varying, leading to an
-intricate influence on the counterfactual distribution. In this paper, we propose a novel
-conditional generative modeling approach to capture the whole counterfactual distribution,
-allowing efficient inference on certain statistics of the counterfactual distribution. This
-makes the proposed approach particularly suitable for healthcare and public policy making.
-Our generative modeling approach carefully tackles the distribution mismatch in the
-observed data and the targeted counterfactual distribution via a marginal structural model.
-Our method outperforms state-of-the-art baselines on both synthetic and real data.
+This codepack includes demo program for the MSCVAE and MSDiffusion on 1d synthetic datasets.
 
-[Counterfactual Generative Models for Time-Varying Treatments](https://arxiv.org/pdf/2305.15742.pdf)
+- MSCVAE: The Jupyter notebook under /mscvae includes a demonstration of using the counterfactual generative model to generate 1-d counterfactual distributions. The notebook can be used to generate results for MSCVAE and CVAE on fully-synthetic datasets. The running time depends on the training size, and is around 3 mins for d=1, 10 mins for d=3, and >20 mins for d=5 using the recommended training size in the notebook.
+
+- MSDiffusion: The python file under /msdiffusion includes training scripts for the msdiffusion model on 1-d synthetic dataset. Example training args are included in train.sh. We recommend using a GPU for accelerating the training procedure.
+
+To install the required packages, run
+
+''' pip install -r requirements.txt '''
+
